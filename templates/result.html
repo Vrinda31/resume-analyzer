@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4>Match Score: {{result.score}}%</h4>
+
+<hr>
+
+<h5>Your Skills Found</h5>
+<ul>
+{% for s in result.resume_skills %}
+<li>{{s}}</li>
+{% endfor %}
+</ul>
+
+<h5>Job Requires</h5>
+<ul>
+{% for s in result.job_skills %}
+<li>{{s}}</li>
+{% endfor %}
+</ul>
+
+<h5>Missing Skills</h5>
+<ul>
+{% for s in result.missing %}
+<li>{{s}}</li>
+{% endfor %}
+</ul>
+
+<a href="/" class="btn btn-secondary mt-3">Try Again</a>
+
+{% endblock %}
